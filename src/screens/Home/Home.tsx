@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from "react";
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import styles from "./HomeStyles";
 import { CpsLogo } from '../../components/CpsLogo/CpsLogo';
 import { CpsTextInput } from '../../components/CpsTextInput/CpsTextInput';
+import { CpsButton } from '../../components/CpsButton/CpsButton';
 
 export default function Home(){
     return(
@@ -12,13 +13,14 @@ export default function Home(){
         <CpsLogo/>
         </View>
 
-<View>
+<View style={styles.inputContainer}>
   <CpsTextInput/>
+  <CpsButton/>
 </View>
 
 
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style="auto" />
+        
+        <StatusBar style="light" />
       </View>
         
     );
