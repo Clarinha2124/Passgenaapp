@@ -3,12 +3,24 @@ import { TextInput, View } from 'react-native';
 
 import { styles } from './CpsTextInputStyles';
 
-export function CpsTextInput() {
+
+
+interface CpsTextInputProps{
+  pass:string
+}
+
+
+
+export function CpsTextInput( props: CpsTextInputProps) {
   return (
 
 <TextInput style={styles.Inputer}
-placeholder='Pass'/>
-   
+placeholder='Pass'
+
+value={props.pass}
+
+
+/>
 
  
   );

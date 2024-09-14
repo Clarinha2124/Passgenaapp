@@ -3,7 +3,7 @@ import React from "react";
 import {View} from 'react-native';
 import styles from "./HomeStyles";
 import { CpsLogo } from '../../components/CpsLogo/CpsLogo';
-import { CpsTextInput } from '../../components/CpsTextInput/CpsTextInput';
+
 import { CpsButton } from '../../components/CpsButton/CpsButton';
 
 export default function Home(){
@@ -14,7 +14,7 @@ export default function Home(){
         </View>
 
 <View style={styles.inputContainer}>
-  <CpsTextInput/>
+ 
   <CpsButton/>
 </View>
 

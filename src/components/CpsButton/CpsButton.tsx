@@ -1,26 +1,46 @@
-import React from 'react';
-import { Button, View, Text, Pressable } from 'react-native';
+import React, {useState} from 'react';
+import {  Text, Pressable } from 'react-native';
 
 import { styles } from './CpsButtonStyles';
 
+import { CpsTextInput } from '../../components/CpsTextInput/CpsTextInput';
+import generatePass from '../../services/passwordService';
+
+import * as Clipboard from 'expo-clipboard';
+
+
+
 export function CpsButton() {
+  const[pass, setPass] = useState('')
+
+  function handleGenerateButton(){
+    let generateToken =generatePass()
+    setPass(generateToken)
+  }
+
+function handleCopyButton(){
+
+  Clipboard.setStringAsync(pass)
+}
+
   return (
-    <View >
-    
+    <>
+     <CpsTextInput pass={pass}/>
+
 <Pressable
-onPress={()=>{console.log('gerar')}}
+onPress={handleGenerateButton}
 style={styles.button}
 >
 <Text  style={styles.text}>🌷 Gerar</Text>
 </Pressable>
 
 <Pressable
-onPress={()=>{console.log('copiar')}}
+onPress={handleCopyButton}
 style={styles.button}>
 <Text style={styles.text}>🌼 Copiar</Text>
 </Pressable>
 
     
-    </View>
+    </>
   );
 }
